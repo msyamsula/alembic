@@ -1,0 +1,22 @@
+version: "3.7"
+
+services: 
+  alembic_vm:
+    container_name: alembic_vm
+    hostname: alembic_vm
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: alembic_vm
+    working_dir: /root/demo
+    volumes: 
+      - ".:/root/demo"
+  alembic_db:
+    container_name: alembic_db
+    hostname: alembic_db
+    build:
+      context: .
+      dockerfile: ./Dockerfile.pg
+    image: alembic_pg
+    ports: 
+      - "5432:5432"

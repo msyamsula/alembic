@@ -1,0 +1,12 @@
+# its for creating images of mysql database
+FROM postgres
+LABEL maintainer="syamsul"
+
+# add root password
+ENV POSTGRES_USER="user"
+ENV POSTGRES_DB="alembic_db"
+ENV POSTGRES_PASSWORD="password1234"
+# add new user and database sql from script
+# put your inital database into initdb.sql
+# ADD initpg.sql /docker-entrypoint-initdb.d
+
